@@ -16,7 +16,3 @@ novel cross-platform native programs and apps for Windows, macOS, Android, and i
 {% include skills.html title="Programming Skills" source=site.data.programming-skills %}
 {% include skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
-
-<div class="row">
-{% include timeline.html %}
-</div>
