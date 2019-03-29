@@ -5,9 +5,10 @@ permalink: /cv/
 weight: 1
 ---
 
+<space><space>
 ## Education
-B.A. in Molecular Biology and Computer Science
-Pomona College
+B.A. in Molecular Biology and Computer Science<space>
+Pomona College<space>
 Expecting May 2021.
 
 ## Experience
