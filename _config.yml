@@ -56,3 +56,4 @@ exclude:
 - docs/github.md
 - docs/elements.md
 - _projects/z-project.md
+- pages/about.md
