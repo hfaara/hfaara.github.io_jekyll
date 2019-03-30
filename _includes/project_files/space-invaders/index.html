@@ -1,81 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link rel="shortcut icon" href="../../assets/img/icons/favicon.ico">
+			
 
-      <title>Space Invaders - Hussein Faara</title>
-
-      <!-- Bootstrap core CSS -->
-      <link href="../../assets/css/bootstrap.css" rel="stylesheet">
-
-      <!-- Custom styles for this template -->
-      <link href="../../assets/css/main.css" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
-
-  	  <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
-
-      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-      <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
-
-      <script src="../../assets/js/jquery.min.js"></script>
-      <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script>
-			<script src = "script.js"></script>
-			<style>
-				html {
-				background-color: #ece5df;
-				}
-				canvas {
-				background-color: #000;
-				display: block;
-				position: absolute;
-				margin: auto;
-				top:0;
-				bottom:0;
-				left: 0;
-				right:0;
-			}
-
-				a {
-				font-size: 32px;
-	  			font-family: Arial;
-	 			color: #0095DD;
-				}
-		</style>
-	</head>
-	<body data-spy="scroll" data-offset="0" data-target="#nav">
-  <section></section>
-  <div id="section-topbar">
-    <div id="topbar-inner">
-      <div class="container">
-        <div class="row">
-          <div class="dropdown">
-              <a class="navbar-brand smoothScroll" title="Title" href="http://www.husseinfaara.com">hf</a>
-  		<ul id="nav" class="nav">
-                	<li class="menu-item"><a class="smoothScroll" href="../../about" title="About"><i class="icon-user"></i></a></li>
-  			<li class="menu-item"><a class="smoothScroll" href="../../cv" title="cv"><i class="icon-file"></i></a></li>
-  			<li class="menu-item"><a class="smoothScroll" href="../../projects" title="Works"><i class="icon-briefcase"></i></a></li>
-  			<li class="menu-item"><a class="smoothScroll" href="../../contact" title="Contact"><i class="icon-envelope"></i></a></li>
-  		</ul><!--/ uL#nav -->
-  	</div><!-- /.dropdown -->
-
-          <div class="clear"></div>
-        </div><!--/.row -->
-      </div><!--/.container -->
-
-      <div class="clear"></div>
-    </div><!--/ #topbar-inner -->
-  </div><!--/ #section-topbar -->
-
+<body >
 	<canvas></canvas>
+	<style>
+		
+		canvas {
+			background-color: #000;
+			display: block;
+			position: absolute;
+			margin: auto;
+			top:0;
+			bottom:0;
+			left: 0;
+			right:0;
+		}
+	</style>
 	<script>
+	function AABBIntersect(ax, ay, aw, ah, bx, by, bw, bh) {
+	return ax < bx+bw && bx < ax+aw && ay < by+bh && by < ay+ah;
+};
+
+function Bullet(x, y, vely, w, h, color) {
+	this.x= x;
+	this.y= y;
+	this.vely= vely;
+	this.w= w;
+	this.h = h;
+	this.color= color;
+};
+
+Bullet.prototype.update = function () {
+	this.y += this.vely;
+};
+
+
+function Display(width, height) {
+	this.canvas = document.createElement("canvas");
+	this.canvas.width = this.width= width;
+	this.canvas.height = this.height= height;
+	this.ctx = this.canvas.getContext("2d");
+
+	document.body.appendChild(this.canvas);
+};
+ Display.prototype.clear = function () {
+	 this.ctx.clearRect(0, 0, this.width, this.height);
+
+ };
+ Display.prototype.drawSprite = function(sp, x, y) {
+	 this.ctx.drawImage(sp.img, sp.x, sp.y, sp.w, sp.h, x, y, sp.w, sp.h);
+ };
+
+ Display.prototype.drawBullet = function (bullet) {
+	 this.ctx.fillStyle = bullet.color;
+	 this.ctx.fillRect(bullet.x, bullet.y, bullet.w, bullet.h);
+
+ };
+
+ function Sprite(img, x, y, w, h) {
+	 this.img = img;
+	 this.x= x;
+	 this.y= y;
+	 this.w= w;
+	 this.h = h;
+ };
+
+ function InputHandler() {
+	this.down = {};
+	this.pressed = {};
+
+
+	var _this = this;
+	document.addEventListener("keydown", function(evt) {
+		_this.down[evt.keyCode] = true;
+	});
+	document.addEventListener("keyup", function(evt) {
+		delete _this.down[evt.keyCode];
+		delete _this.pressed[evt.keyCode];
+	});
+
+ };
+
+ InputHandler.prototype.isDown = function(code) {
+	//this.down={};
+	//this.pressed = {};
+
+	 //var _this = this;
+	 //document.addEventListener("keydown", function(evt) {
+		// _this.down[evt.keyCode] = true;
+	// });
+
+	return this.down[code];
+  };
+
+ InputHandler.prototype.isPressed = function(code) {
+	 if(this.pressed[code]) {
+		 return false;
+	 } else if(this.down[code]) {
+		 return this.pressed[code] = true;
+	 }
+	 return false;
+  };
+
 	var display, input, frames, spFrame, lvFrame;
 	var alSprite, taSprite, ciSprite;
 	var aliens, dir, tank, bullets, cities;
@@ -309,5 +334,4 @@
 
 	main();
 	</script>
-	</body>
-</html>
+</body>
