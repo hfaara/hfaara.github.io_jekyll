@@ -1,9 +1,8 @@
-
 <body>
   <h3 class="h3 text-center" style="color:black">Energy Units Converter</h3>
   <p class="text-center" style="color:black"> Enter your energy value in the box with the appropriate units, then press "tab" or click outside of the input box.</p>
   <P>
-    <FORM NAME="Hartree" METHOD=POST>
+    <form name="Hartree" method=post>
       <div class="container">
         <div class="form-group row">
           <div class="col-xs-4">
@@ -60,10 +59,8 @@
           <label for="boltzman-population" class="col-sm-2 col-form-label">Boltzman population ratio at 298.15K</label>
         </div>
       </div>
-   <SCRIPT LANGUAGE="JavaScript">
-          <!--HIDE FROM OTHER BROWSERS
-
-          //DEFINE METHODS
+   </form>
+   <script>
           function constants(conv) {
             var numE = 7;
             conv[0] = 1.000;
@@ -154,5 +151,5 @@
           var nfields = constants(conv);
 
           // STOP HIDING FROM OTHER BROWSERS -->
-        </SCRIPT>
-</BODY>
+        </script>
+</body>
