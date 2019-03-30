@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" href="../../assets/img/icons/favicon.ico">
+
+      <title>Minesweeper - Hussein Faara</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="../../assets/css/main.css" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+
+  	  <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+
+      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+      <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
+
+      <script src="../../assets/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script>
+    <style>
+      html {
+        background-color: #f2f2f2;
+      }
+      body {
+          /* This centers our sketch horizontally. */
+       justify-content: center;
+
+       /* This centers our sketch vertically. */
+       align-items: center;
+        }
+      canvas  {
+        border: 3px solid darkGrey;
+        border-radius: 5px;
+        background-color:#F8F8FF;
+        }
+
+      a {
+        font-size: 32px;
+        font-family: Arial;
+        color: #0095DD;
+        }
+        button  {
+          display: block;
+          position: absolute;
+          margin: auto;
+        }
+
+        .time {
+          background: black;
+          color: red;
+          font-size: 32px;
+          font-family: Arial;
+        }
+    </style>
+  </head>
+  <body data-spy="scroll" data-offset="0" data-target="#nav">
+  <section></section>
+  <div id="section-topbar">
+    <div id="topbar-inner">
+      <div class="container">
+        <div class="row">
+          <div class="dropdown">
+            <a class="navbar-brand smoothScroll" title="Title" href="../../index.html">hf</a>
+            <ul id="nav" class="nav">
+              <li class="menu-item"><a class="smoothScroll" href="../../about" title="About"><i class="icon-user"></i></a></li>
+              <li class="menu-item"><a class="smoothScroll" href="../../cv" title="cv"><i class="icon-file"></i></a></li>
+              <li class="menu-item"><a class="smoothScroll" href="../../projects" title="Works"><i class="icon-briefcase"></i></a></li>
+              <li class="menu-item"><a class="smoothScroll" href="../../contact" title="Contact"><i class="icon-envelope"></i></a></li>
+            </ul><!--/ uL#nav -->
+          </div><!-- /.dropdown -->
+
+          <div class="clear"></div>
+        </div><!--/.row -->
+      </div><!--/.container -->
+
+      <div class="clear"></div>
+    </div><!--/ #topbar-inner -->
+  </div><!--/ #section-topbar -->
+
+
+  <!-- <div class="form-group row">
+    <div class="col-xs-2">
+      <label for="ex1">Time</label>
+      <input class="form-control" id="time" type="text">
+    </div>
+  </div> -->
+
+
+  <div class="container-fluid">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
+    <script src="Cell.js"></script>
+    <script src="sketch.js"></script>
+  </div>
+</body>
+</html>
