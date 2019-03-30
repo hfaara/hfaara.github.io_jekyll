@@ -57,3 +57,4 @@ exclude:
 - docs/elements.md
 - _projects/z-project.md
 - pages/about.md
+- _projects/space-invaders.md
