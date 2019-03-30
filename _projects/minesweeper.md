@@ -6,3 +6,5 @@ description: A recreation of the single-player puzzle video game in which a play
 external_url: #
 permalink: /minesweeper/
 ---
+
+{% include project_files/minesweeper/index.html %}
