@@ -1,66 +1,64 @@
 <body>
   <h3 class="h3 text-center" style="color:black">Energy Units Converter</h3>
   <p class="text-center" style="color:black"> Enter your energy value in the box with the appropriate units, then press "tab" or click outside of the input box.</p>
-  <p>
-    <form name="Hartree" method=post>
-      <div class="container">
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="hartrees" class="form-control" TYPE="text" NAME="H" VALUE=0 onChange="displayInfo(this.form,this.name);">
-          </div>
-          <label for="hartrees" class="col-sm-2 col-form-label"> Hartrees</label>
+  <form name="Hartree" method=post>
+    <div class="container">
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="hartrees" class="form-control" TYPE="text" NAME="H" VALUE=0 onChange="displayInfo(this.form,this.name);">
+        </div>
+        <label for="hartrees" class="col-sm-2 col-form-label"> Hartrees</label>
+        <BR>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="eV" class="form-control" TYPE="text" NAME="eV" VALUE=0 onChange="displayInfo(this.form,this.name);">
+        </div>
+        <label for="eV" class="col-sm-2 col-form-label">eV</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="kJ/mol" class="form-control" TYPE="text" NAME="kJ/mol" VALUE=0 onChange="displayInfo(this.form,this.name);">
           <BR>
         </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="eV" class="form-control" TYPE="text" NAME="eV" VALUE=0 onChange="displayInfo(this.form,this.name);">
-          </div>
-          <label for="eV" class="col-sm-2 col-form-label">eV</label>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="kJ/mol" class="form-control" TYPE="text" NAME="kJ/mol" VALUE=0 onChange="displayInfo(this.form,this.name);">
-            <BR>
-          </div>
-          <label for="kJ/mol" class="col-sm-2 col-form-label">kJ/mol</label>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="kcal/mol" class="form-control" TYPE="text" NAME="kcal/mol" VALUE=0 onChange="displayInfo(this.form,this.name);">
-            <BR>
-          </div>
-          <label for="kcal/mol" class="col-sm-2 col-form-label">kcal/mol</label>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="cm" class="form-control" TYPE="text" NAME="cm-1" VALUE=0 onChange="displayInfo(this.form,this.name);">
-            <BR>
-          </div>
-          <label for="cm" class="col-sm-2 col-form-label">cm<sup>-1</sup></label>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="V" class="form-control" TYPE="text" NAME="V" VALUE=0 onChange="displayInfo(this.form,this.name);">
-            <BR>
-          </div>
-          <label for="V" class="col-sm-2 col-form-label">V for 1e<sup>-</sup> transfer</label>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="K" class="form-control" TYPE="text" NAME="K" VALUE=0 onChange="displayInfo(this.form,this.name);">
-            <BR>
-          </div>
-          <label for="K" class="col-sm-2 col-form-label">K (equivalent temperature)</label>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-4">
-            <INPUT id="boltzman-population" class="form-control" TYPE="text" NAME="B" VALUE=1 onChange="displayInfo(this.form,this.name);">
-          </div>
-          <label for="boltzman-population" class="col-sm-2 col-form-label">Boltzman population ratio at 298.15K</label>
-        </div>
+        <label for="kJ/mol" class="col-sm-2 col-form-label">kJ/mol</label>
       </div>
-     </form>
-    </p>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="kcal/mol" class="form-control" TYPE="text" NAME="kcal/mol" VALUE=0 onChange="displayInfo(this.form,this.name);">
+          <BR>
+        </div>
+        <label for="kcal/mol" class="col-sm-2 col-form-label">kcal/mol</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="cm" class="form-control" TYPE="text" NAME="cm-1" VALUE=0 onChange="displayInfo(this.form,this.name);">
+          <BR>
+        </div>
+        <label for="cm" class="col-sm-2 col-form-label">cm<sup>-1</sup></label>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="V" class="form-control" TYPE="text" NAME="V" VALUE=0 onChange="displayInfo(this.form,this.name);">
+          <BR>
+        </div>
+        <label for="V" class="col-sm-2 col-form-label">V for 1e<sup>-</sup> transfer</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="K" class="form-control" TYPE="text" NAME="K" VALUE=0 onChange="displayInfo(this.form,this.name);">
+          <BR>
+        </div>
+        <label for="K" class="col-sm-2 col-form-label">K (equivalent temperature)</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <INPUT id="boltzman-population" class="form-control" TYPE="text" NAME="B" VALUE=1 onChange="displayInfo(this.form,this.name);">
+        </div>
+        <label for="boltzman-population" class="col-sm-2 col-form-label">Boltzman population ratio at 298.15K</label>
+      </div>
+    </div>
+   </form>
    <script>
           function constants(conv) {
             var numE = 7;
